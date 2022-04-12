@@ -1,0 +1,76 @@
+.login {
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 350px;
+    height: 350px;
+    background: #3bb19b;
+    border: 1px solid #dddfe2;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    border-radius: 8px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.login > input {
+    border-radius: 8px;
+    border: 2px solid #dddfe2;
+    outline: none;
+    color: #1d2129;
+    margin: 0.5rem 10px;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    height: 38px;
+
+}
+
+.login > .button {
+    width: 278px;
+    height: 38px;
+    background: #283341;
+    border: 1px solid #02162f;
+    color: #fff;
+    font-size: 1rem;
+    padding: 1rem;
+    margin: 0.5rem 10px;
+    border-radius: 4px;
+    outline: none;
+    /* text-align: center; */
+    /* justify-content: center; */
+    cursor: pointer;
+}
+
+.or {
+    display: flex;
+    flex-direction: row;
+}
+
+.HorizontalLine {
+    background-color: rgba(var(--b38,219,219,219),1);
+    -webkit-box-flex: 1;
+
+    flex-grow: 1;
+
+    flex-shrink: 1;
+    height: 1px;
+    position: relative;
+    top: 0.45em;
+}
+
+.TextOr {
+    color: #fff;
+    -webkit-box-flex: 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+    font-size: 13px;
+    font-family: 'Ubuntu';
+    line-height: 15px;
+    margin: 0 18px;
+    text-transform: uppercase;
+}
+  
