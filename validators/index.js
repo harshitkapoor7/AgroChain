@@ -10,7 +10,6 @@ class Validators {
             this.validators.push(validatorId);
         } else {
             this.validators.splice(ind,1);
-            // console.log('IDHAR HUN BHAI ',this.validators );
         }
     }
      

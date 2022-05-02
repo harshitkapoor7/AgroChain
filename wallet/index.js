@@ -52,6 +52,8 @@ class Wallet{
             }
             else {
                 let transaction = block.data;
+                if(!transaction)
+                    break;
                 if(transaction.input.address === address){
                     hasConductedTransaction = true;
                 }
@@ -69,5 +71,6 @@ class Wallet{
         return hasConductedTransaction ? totalOutput : STARTING_BALANCE + totalOutput;
     }
 }
+
 
 module.exports = Wallet;

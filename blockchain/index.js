@@ -22,15 +22,6 @@ class Blockchain {
         this.chain[0].validatorsMap[validatorId] = existingValidatorTransactions;
     }
 
-    /*addBlock({ data }) {
-        const newBlock = Block.mineBlock({
-            lastBlock: this.chain[this.chain.length - 1],
-            data
-        });
-
-        this.chain.push(newBlock);
-    }*/
-
     replaceChain(validatorsTransactionMap, validatorsCCR, onSuccess) {
         if(validatorsTransactionMap && validatorsTransactionMap.size) {
             for(let key of Object.keys(validatorsTransactionMap)) {
@@ -59,24 +50,6 @@ class Blockchain {
         if(validatorsTransactionMap)
             this.chain[0].validatorsMap = validatorsTransactionMap;
 
-        /*if (chain.length <= this.chain.length) {
-            console.error('The incoming chain must be longer');
-            return;
-        }
-        if (!Blockchain.isValidChain(chain)) {
-            console.error('The incoming chain must be valid');
-            return;
-        }
-
-        if(validateTransactions && !this.validTransactionData({ chain })){
-            console.error('The incoming chain has invalid data');
-            return;
-        }
-
-        if (onSuccess)
-            onSuccess();
-        // console.log('replacing chain with', chain);
-        this.chain = chain;*/
     }
 
     transactionIdHash(transactionId){
@@ -87,7 +60,7 @@ class Blockchain {
         return num%62;
     }
 
-    validTransactionData({ chain }) {
+    /*validTransactionData({ chain }) {
         for (let i = 1; i < chain.length; i++) {
             const block = chain[i];
             const transactionSet = new Set();
@@ -137,6 +110,7 @@ class Blockchain {
         }
         return true;
     }
+    
 
     static isValidChain(chain) {
         if (JSON.stringify(chain[0]) !== JSON.stringify(Block.genesis()))
@@ -154,7 +128,7 @@ class Blockchain {
             if (Math.abs(lastDifficulty - difficulty) > 1) return false;
         }
         return true;
-    }
+    }*/
 }
 
 module.exports = Blockchain;

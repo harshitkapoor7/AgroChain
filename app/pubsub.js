@@ -63,14 +63,11 @@ class PubSub {
             message: messageObject => {
                 const { channel, message } = messageObject;
                 
-                   // console.log(`Message received. Channel: ${channel}. Message: ${message}.`);
-                
                 const parsedMessage = JSON.parse(message);
                 switch(channel){
                     case CHANNELS.VALIDATORSCCR:
                         this.blockchain.replaceChain(parsedMessage, this.validatorsCCR, true);
                     case CHANNELS.VALIDATORS:
-                        // console.log('Validators',this.blockchain.chain[0]);
 
                         if(parsedMessage != this.wallet.publicKey) {
                             this.validators.addValidator(parsedMessage);
@@ -79,18 +76,12 @@ class PubSub {
                         }
                         break;
                     case CHANNELS.BLOCKCHAIN:
-                        // this.blockchain.replaceChain(parsedMessage, this.validatorsCCR, true);
                         this.blockchain.replaceChain(parsedMessage, this.validatorsCCR, () => {
                             this.transactionPool.clearBlockchainTransactions({ validatorTransactionMap: parsedMessage });
                         });
                         break;
                     case CHANNELS.TRANSACTION:
                         this.transactionPool.setTransaction(parsedMessage);
-                        /*if (!this.transactionPool.existingTransaction({
-                            inputAddress: this.wallet.publicKey
-                          })) {
-                            this.transactionPool.setTransaction(parsedMessage);
-                          }*/
               
                         break;
                     

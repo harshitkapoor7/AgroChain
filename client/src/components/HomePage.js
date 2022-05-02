@@ -1,18 +1,12 @@
 import React, { Component, useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
 import BootstrapSwitchButton from 'bootstrap-switch-button-react'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import ReactTooltip from 'react-tooltip';
 import copy from "copy-to-clipboard";
 import { ToastContainer, toast } from 'react-toastify';
-import Sidebar from './Sidebar';
-
-//pubsub =  require('../../../index').obj;
-
 
 const HomePage = ({ user, setLoginUser }) => {
     const [state, setState] = useState({ walletInfo: {}, validatorInterest: false });
@@ -29,8 +23,6 @@ const HomePage = ({ user, setLoginUser }) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ validatorInterest: !state.validatorInterest })
         }).then(response => response.json())
-
-        //console.log('hello', pubsub);
     };
 
     const handleCopy = () => {
@@ -66,17 +58,9 @@ const HomePage = ({ user, setLoginUser }) => {
         <div className='HomePage'>
             <div className='AccountDetails'>
 
-
-
-
-                {/* <div className="button" onClick={() => setLoginUser({})} >Logout</div> */}
                 <img className='logo' src={logo}></img>
                 <br />
                 <div>Welcome to AgroChain</div>
-                {/* <br/> */}
-                {/* <div><Link to='/blocks'>Blocks</Link></div> */}
-                {/* <div><Link to='/conduct-transaction'>Conduct a Transaction</Link></div> */}
-                {/* <div><Link to='/transaction-pool'>Transaction Pool</Link></div> */}
                 <br />
                 <Container className='WalletInfo'>
                     <Row className='WalletInfoRowMiddle'>

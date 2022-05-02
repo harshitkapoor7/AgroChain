@@ -22,12 +22,6 @@ class Block extends Component {
                     {
 
                         <Transaction transaction={data}/>
-                        /*data.map(transaction => (
-                            <div key={transaction.id}>
-                                <hr/>
-                                <Transaction transaction={transaction} />
-                            </div>
-                        ))*/
                     }
                     <br/>
                     <Button
